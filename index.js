@@ -38,6 +38,6 @@ module.exports = function superagent_adapter(opts, cb) {
             return cb(err);
         }
 
-        cb(null, body);
+        cb(null, body, res);
     });
 };
