@@ -14,6 +14,10 @@ module.exports = function superagent_adapter(opts, cb) {
 
     req.set('Accept', 'application/json');
 
+    if (opts.headers) {
+        req.set(opts.headers);
+    }
+
     if (query) {
         req.query(query);
     }

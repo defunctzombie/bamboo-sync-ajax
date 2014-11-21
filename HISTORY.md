@@ -1,3 +1,7 @@
+# UNRELEASED
+
+  * add opts.headers support
+
 # 0.1.0 (2014-10-30)
 
   * pass response object back as third argument
