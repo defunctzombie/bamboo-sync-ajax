@@ -1,4 +1,4 @@
-# UNRELEASED
+# 0.2.0 (2014-11-21)
 
   * add opts.headers support
 
