@@ -39,7 +39,7 @@ module.exports = function superagent_adapter(opts, cb) {
             var err = new Error();
             err.status = res.status;
             err.message = (body ? body.message : '');
-            return cb(err);
+            return cb(err, body, res);
         }
 
         cb(null, body, res);
