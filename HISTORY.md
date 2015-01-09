@@ -1,3 +1,7 @@
+# 0.2.1 (2015-01-08)
+
+  * return body and response even when error
+
 # 0.2.0 (2014-11-21)
 
   * add opts.headers support
