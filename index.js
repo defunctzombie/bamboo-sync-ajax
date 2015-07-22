@@ -25,7 +25,7 @@ module.exports = function superagent_adapter(opts, cb) {
     // TODO patch?
     if (body && (method === 'POST' || method === 'PUT')) {
         req.set('Content-Type', 'application/json');
-        req.send(body.toJSON());
+        req.send(body.toJSON ? body.toJSON() : body);
     }
 
     req.end(function(err, res) {
