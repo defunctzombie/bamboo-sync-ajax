@@ -1,3 +1,7 @@
+# UNRELEASED
+
+  * support object literal for options.body
+
 # 0.2.1 (2015-01-08)
 
   * return body and response even when error
