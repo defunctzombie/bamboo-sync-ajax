@@ -1,4 +1,4 @@
-# UNRELEASED
+# 0.3.0 (2015-07-22)
 
   * support object literal for options.body
 
