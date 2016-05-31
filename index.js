@@ -24,8 +24,20 @@ module.exports = function superagent_adapter(opts, cb) {
 
     // TODO patch?
     if (body && (method === 'POST' || method === 'PUT')) {
-        req.set('Content-Type', 'application/json');
+        req.type('application/json');
         req.send(body.toJSON ? body.toJSON() : body);
+    }
+
+    // For requests where the payload is a FormData object, the Content-Type
+    // should be 'multipart/form-data'. This cannot be set explicitly however,
+    // because the boundary would also need to be specified, which is not
+    // determined until req.end. Superagent will automatically fill the content
+    // type as 'multipart/form-data' with a proper boundary on end if it is
+    // undefined. This must be done between 'send' and 'end' because 'send'
+    // will default the content type 'application/json' if it is undefined at
+    // that point.
+    if (body instanceof FormData) {
+        req.type(undefined);
     }
 
     req.end(function(err, res) {
